@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Processor</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        
+        <div id="main-task-header">
+            <h1>
+                Add Task
+            </h1>
+
+            <form id="new-task-form">
+
+                <div id="for_id_position">
+
+                    <div class="main-task-id-task">
+                        <label for="maintask-id" style="font-size: 1.2rem;">ID</label>
+                        <input type="number" id="maintask-id" placeholder="enter id" required>    
+                    </div>
+                   
+                    <div class="main-task-id-task">
+                        <label for="new-task-input" style="font-size: 1.2rem;">Enter task</label>
+                        <input type="text" id="new-task-input" placeholder="Name of the Task?" required>
+                    </div>
+                    
+                </div>
+
+
+                <div class="dates-directions">
+                    <div id="task-dates">
+
+                        <div class="dates-padding1">
+                            <label for="task-start-date" style="font-size: 1.2rem;">Start date</label>
+                            <input type="date" id="task-start-date" name="task-start-date">
+                        </div>
+                        
+                        <div class="dates-padding2">
+                            <label for="task-end-date" style="font-size: 1.2rem;">End date</label>
+                            <input type="date" id="task-end-date" name="task-end-date">
+                        </div>
+                       
+                    </div>
+
+
+                    <div id="task-dropdown">
+
+                        <label for="task-status" style="color: black; font-size: 1.2rem;">Status</label>
+
+                        <select name="mainstatus" id="task-status">
+                            <option value="inprogress">In-Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="duepassed">Due-Passed</option>
+                            <option value="canceled">Canceled</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="task-btnsubmit">
+                    <input type="submit" id="new-task-submit" value="Add task">
+                </div>
+
+            </form>
+        </div>
+
+        <div id="subtask-header">
+            <h1>
+                Add Subtask
+            </h1>
+
+            <form id="sub-task-form">
+
+                <div class="sub-task-input">
+                    <label for="sub-task-input" style="font-size: 1.2rem;">Enter Subtask</label>
+                    <input type="text" id="sub-task-input" placeholder="Name of the subTask?" required>
+                </div>
+                
+
+                <div class="dates-directions">
+                    <div id="sub-task-dates">
+
+                        <div class="sub-dates-padding1">
+                            <label for="subtask-start-date" style="font-size: 1.2rem;">Start date</label>
+                            <input type="date" id="subtask-start-date" required>
+                        </div>
+
+                        <div class="sub-dates-padding2">
+                            <label for="subtask-end-date" style="font-size: 1.2rem;">End date</label>
+                            <input type="date" id="subtask-end-date" required>
+                        </div>
+            
+                    </div>
+
+                    <div id="subtask-dropdown">
+
+                        <label for="subtask-status" style="color: black;
+                        font-size: 1.2rem;">Status</label>
+
+                        <select name="substatus" id="subtask-status">
+                            <option value="inprogress">In-Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="duepassed">Due-Passed</option>
+                            <option value="canceled">Canceled</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="subtask-btnsubmit">
+                    <input type="submit" id="subtask-submit" value="Add Subtask">
+                </div>
+            
+            </form>
+        </div>
+
+    </div>
+
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div id="tasks">
+
+                <input type="text" name="search-table" id="search_input" placeholder="search" onkeyup="searchFun()">
+                <table id="myTable">
+                    <thead>
+                        <th style="width: 6%;">Id</th>
+                        <th style="width: 25%;">Name</th>
+                        <th style="width: 15%;">StartDate</th>
+                        <th style="width: 15%;">EndDate</th>
+                        <th style="width: 15%;">Status</th>
+                        <th style="width: 12%;">Edit</th>
+                        <th style="width: 15%;">Delete</th>
+                    </thead>
+
+                    <tbody id="tab_body">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
